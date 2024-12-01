@@ -36,10 +36,10 @@ public class MainTest {
 
     @BeforeEach
     void setUp() {
-        car = new Car(4, "Mercedes");
-        mitsubishi = new Mitsubishi(4, "Mitsubishi");
-        holden = new Holden(4, "Holden");
-        ford = new Ford(4, "Ford");
+        car = new Car("Mercedes", 4);
+        mitsubishi = new Mitsubishi("Mitsubishi", 4);
+        holden = new Holden("Holden", 4);
+        ford = new Ford("Ford", 4);
         carSkeleton = new CarSkeleton("Test", "test");
         electricCar = new ElectricCar("Test", "test", 10, 5);
         gasPoweredCar = new GasPoweredCar("Test", "test", 10, 4);
@@ -136,7 +136,7 @@ public class MainTest {
     public void testGasPoweredCar() throws NoSuchMethodException {
         assertThat(gasPoweredCar.getName(), instanceOf(String.class));
         assertThat(gasPoweredCar.getDescription(), instanceOf(String.class));
-        assertThat(gasPoweredCar.getAverageKmPerLiter(), instanceOf(Double.class));
+        assertThat(gasPoweredCar.getAvgKmPerLitre(), instanceOf(Double.class));
         assertThat(gasPoweredCar.getCylinders(), instanceOf(Integer.class));
     }
 
@@ -146,7 +146,7 @@ public class MainTest {
         assertThat(hybridCar.getName(), instanceOf(String.class));
         assertThat(hybridCar.getDescription(), instanceOf(String.class));
         assertThat(hybridCar.getCylinders(), instanceOf(Integer.class));
-        assertThat(hybridCar.getAvgKmPerLiter(), instanceOf(Double.class));
+        assertThat(hybridCar.getAvgKmPerLitre(), instanceOf(Double.class));
         assertThat(hybridCar.getBatterySize(), instanceOf(Integer.class));
     }
 
